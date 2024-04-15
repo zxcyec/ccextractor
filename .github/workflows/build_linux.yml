@@ -34,7 +34,7 @@ jobs:
       working-directory: ./linux
       run: ar -x libgpac.a && gcc -shared *.o -o libgpac.so
     - name: copy
-      run: sudo cp libgpac.so /usr/lib
+      run: sudo cp libgpac.so /usr/lib && sudo cp libgpac.a /usr/lib
       working-directory: ./linux
     - name: cmake
       run: cmake ../src
