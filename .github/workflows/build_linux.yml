@@ -44,10 +44,7 @@ jobs:
       working-directory: ./build
     - name: Display version information
       run: ./ccextractor --version
-      working-directory: ./linux
-    - name: Prepare artifacts
-      run: mkdir ./linux/artifacts
-    - name: Copy release artifact
+      working-directory: ./build
     - uses: actions/upload-artifact@v4
       with:
         name: CCExtractor Linux build
