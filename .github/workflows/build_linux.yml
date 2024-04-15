@@ -32,9 +32,9 @@ jobs:
       run: mkdir build
     - name: to so
       working-directory: ./linux
-      run: ar -x libpac.a && gcc -shared *.o -o libpac.so
+      run: ar -x libgpac.a && gcc -shared *.o -o libgpac.so
     - name: copy
-      run: sudo cp libpac.so /usr/lib
+      run: sudo cp libgpac.so /usr/lib
       working-directory: ./linux
     - name: cmake
       run: cmake ../src
