@@ -29,15 +29,13 @@ jobs:
       run: sudo apt update && sudo apt-get install libgpac-dev libtesseract-dev build-essential
     - uses: actions/checkout@v4
     - name: mkdir
-      run: mkdir build && mkdir libgpac
-    - name: cp a
-      run: cp ../linux/libgpac.a ./libgpac
-      working-directory: ./build
+      run: mkdir build
     - name: to so
       working-directory: ./linux
       run: ar -x libpac.a && gcc -shared *.o -o libpac.so
     - name: copy
-      run: sudo cp ./linux/libpac.so /usr/lib
+      run: sudo cp libpac.so /usr/lib
+      working-directory: ./linux
     - name: cmake
       run: cmake ../src
       working-directory: ./build
