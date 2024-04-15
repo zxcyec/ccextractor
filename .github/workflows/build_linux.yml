@@ -35,7 +35,9 @@ jobs:
       working-directory: ./build
     - name: to so
       working-directory: ./build/libpac
-      run: ar -x libpac.a && gcc -shared *.o -o libpac.so && sudo cp libpac.so /usr/lib
+      run: ar -x libpac.a && gcc -shared *.o -o libpac.so
+    - name: copy
+      run: sudo cp ./build/libpac/libpac.so /usr/lib
     - name: cmake
       run: cmake ../src
       working-directory: ./build
